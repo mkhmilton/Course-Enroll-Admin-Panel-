@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiteController;
+use App\Http\Controllers\VisitorController;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [SiteController::class,'showHome']);
+Route::get('/visitor', [VisitorController::class,'showVisitor']);
+
+
+Route::get('/course', [CourseController::class,'showCourse']);
+Route::get('/getCourseData', [CourseController::class,'getCourseData']);
+Route::post('/CourseDelete', [CourseController::class,'CourseDelete']);
+Route::post('/CourseDetails', [CourseController::class,'getCourseDetails']);
+Route::post('/CourseUpdate', [CourseController::class,'CourseUpdate']);
+Route::post('/CourseAdd', [CourseController::class,'CourseAdd']);
