@@ -52,7 +52,7 @@
       
       <div class="modal-body text-center p-5">
                 
-        
+        <h6 class="mb-4">Edit Course</h6>
         <h6 id="courseEditId" class="mt-4"></h6>
         <input id="courseNameID" type="text" id=" " class="form-control mb-4" placeholder="Course Name">
         <input id="courseDesID" type="text" id=" " class="form-control mb-4" placeholder="Course Description">
@@ -173,7 +173,7 @@ function courseDelete(deleteID) {
                 getCourseData();
             } else {
                 $('#deleteModal').modal('hide');
-                toastr.success('Delete Fail!');
+                toastr.error('Delete Fail!');
                 getCourseData();
             }
         })
